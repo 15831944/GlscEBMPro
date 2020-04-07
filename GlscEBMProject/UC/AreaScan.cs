@@ -45,7 +45,7 @@ namespace GlscEBMProject.UC
                 Parameter._preHeatPara.scanVolt = double.Parse(this.txtVolt.Text);
                 Parameter._preHeatPara.scanCount = uint.Parse(this.txtpreheatCout.Text);
                 WritePara();
-                MessageBox.Show("提示", "参数应用成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("参数应用成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                
             }
             catch (Exception)

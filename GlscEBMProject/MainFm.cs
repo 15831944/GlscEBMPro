@@ -25,9 +25,6 @@ namespace GlscEBMProject
             LoadUserControl(_manuScan);//默认加载手动输入
             GlobleParameter.DelShowMess += ShowInfo;
             GlobleParameter._eBMBeamScan.OnOperation += ShowInfo;
-           
-
-
         }
 
         private void toolStriptn_Click(object sender, EventArgs e)

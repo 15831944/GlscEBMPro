@@ -19,16 +19,17 @@ namespace GlscEBMProject.UC
     public partial class ManuScan : UserControl,IBeamScanController
     {
         private beamScan _beamScan;
-        private bool isAstXAdd;
-        private bool isAstXMinus;
-        private bool isAstYAdd;
-        private bool isAstYMinus;
-        private bool isFocusAdd;
-        private bool isFocusMinus;
-        private bool isXAdd;
-        private bool isXMinus;
-        private bool isYMinus;
-        private bool isYAdd;
+        bool isAstXAdd = false;
+        bool isAstXMinus = false;
+        bool isAstYAdd = false;
+        bool isAstYMinus = false;
+        bool isFocusAdd = false;
+        bool isFocusMinus = false;
+
+        bool isXAdd = false;
+        bool isXMinus = false;
+        bool isYAdd = false;
+        bool isYMinus = false;
         private bool _isDirecStop=false;
         private int flag;
         List<ushort> pointList = new List<ushort>();
@@ -42,14 +43,12 @@ namespace GlscEBMProject.UC
             InitializeComponent();
             _beamScan = new beamScan();
             ReadParameters();
-            GlobleParameter._eBMBeamScan.DummySweep(800000);
         }
 
  
         public void BeamStart()
         {
             bool bUseCalibrated = this.chbCal.Checked;
-            ReadParameters();
             GlobleParameter._eBMBeamScan.RunSingleOut(bUseCalibrated,_beamScan,ushort.Parse(txtFocusAdd.Text));
         }
 
@@ -367,6 +366,14 @@ namespace GlscEBMProject.UC
                 txtast_X.Text = file.IniReadvalue("Powder", "ASTX");
                 txtast_Y.Text = file.IniReadvalue("Powder", "ASTY");
                 txtFo.Text = file.IniReadvalue("Powder", "FO");
+                txtBeamValue.Text = file.IniReadvalue("Powder", "BeamVal");
+                this._beamScan.Astig1 = ushort.Parse(txtast_X.Text);
+                this._beamScan.Astig2 = ushort.Parse(txtast_Y.Text);
+                this._beamScan.BeamCurrent = ushort.Parse(txtBeamValue.Text);
+                this._beamScan.Focus = ushort.Parse(txtF0.Text);
+                this._beamScan.X = ushort.Parse(txtX.Text);
+                this._beamScan.Y = ushort.Parse(txtY.Text);
+
             }
             catch (Exception ex)
             {
@@ -746,6 +753,23 @@ namespace GlscEBMProject.UC
             {
                 btnApply_Click(null, null);
             }
+        }
+
+        private void chbCal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbCal.Checked && _beamScan != null)
+            {
+
+                _beamScan.Astig1 = (ushort)StaticTool.CaculateLinerVal(ushort.Parse(txtX.Text.Trim()), ushort.Parse(txtY.Text.Trim()), true);
+                _beamScan.Astig2 = (ushort)StaticTool.CaculateLinerVal(ushort.Parse(txtX.Text.Trim()), ushort.Parse(txtY.Text.Trim()), false);
+
+                _beamScan.Focus = (ushort)(StaticTool.CaculateFocus((uint)StaticTool.GetRadius(ushort.Parse(txtX.Text.Trim()), ushort.Parse(txtY.Text.Trim()))) + ushort.Parse(txtFocusAdd.Text.Trim()));
+            }
+        }
+
+        private void chbKey_CheckedChanged(object sender, EventArgs e)
+        {
+            txtastX.ReadOnly = txtastY.ReadOnly = txtFocus.ReadOnly = (sender as CheckBox).Checked;
         }
     }
 
