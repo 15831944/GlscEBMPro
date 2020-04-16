@@ -51,16 +51,24 @@
             this.listBoxCadInfo = new System.Windows.Forms.ListView();
             this.事件 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMaxX = new System.Windows.Forms.TextBox();
+            this.txtMinX = new System.Windows.Forms.TextBox();
+            this.txtMinY = new System.Windows.Forms.TextBox();
+            this.txtMaxY = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(383, 38);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(274, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 52);
+            this.button1.Size = new System.Drawing.Size(68, 42);
             this.button1.TabIndex = 0;
             this.button1.Text = "选择文件";
             this.button1.UseVisualStyleBackColor = true;
@@ -68,19 +76,20 @@
             // 
             // txtFileName
             // 
-            this.txtFileName.Location = new System.Drawing.Point(181, 29);
-            this.txtFileName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFileName.Location = new System.Drawing.Point(136, 23);
+            this.txtFileName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.ReadOnly = true;
-            this.txtFileName.Size = new System.Drawing.Size(157, 25);
+            this.txtFileName.Size = new System.Drawing.Size(119, 21);
             this.txtFileName.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 75);
+            this.label1.Location = new System.Drawing.Point(63, 60);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.Size = new System.Drawing.Size(59, 12);
             this.label1.TabIndex = 2;
             this.label1.Text = "文件路径:";
             // 
@@ -126,70 +135,72 @@
             // 
             // txtFilePath
             // 
-            this.txtFilePath.Location = new System.Drawing.Point(181, 71);
-            this.txtFilePath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFilePath.Location = new System.Drawing.Point(136, 57);
+            this.txtFilePath.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.ReadOnly = true;
-            this.txtFilePath.Size = new System.Drawing.Size(157, 25);
+            this.txtFilePath.Size = new System.Drawing.Size(220, 21);
             this.txtFilePath.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 28);
+            this.label2.Location = new System.Drawing.Point(10, 30);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 5;
             this.label2.Text = "speed:";
             // 
             // txtCADspeed
             // 
-            this.txtCADspeed.Location = new System.Drawing.Point(97, 24);
-            this.txtCADspeed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCADspeed.Location = new System.Drawing.Point(73, 27);
+            this.txtCADspeed.Margin = new System.Windows.Forms.Padding(2);
             this.txtCADspeed.Name = "txtCADspeed";
-            this.txtCADspeed.Size = new System.Drawing.Size(104, 25);
+            this.txtCADspeed.Size = new System.Drawing.Size(79, 21);
             this.txtCADspeed.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 59);
+            this.label3.Location = new System.Drawing.Point(10, 55);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 15);
+            this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 7;
             this.label3.Text = "BeamVal:";
             // 
             // txtCADBeamVal
             // 
-            this.txtCADBeamVal.Location = new System.Drawing.Point(97, 55);
-            this.txtCADBeamVal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCADBeamVal.Location = new System.Drawing.Point(73, 52);
+            this.txtCADBeamVal.Margin = new System.Windows.Forms.Padding(2);
             this.txtCADBeamVal.Name = "txtCADBeamVal";
-            this.txtCADBeamVal.Size = new System.Drawing.Size(104, 25);
+            this.txtCADBeamVal.Size = new System.Drawing.Size(79, 21);
             this.txtCADBeamVal.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(217, 28);
+            this.label4.Location = new System.Drawing.Point(163, 30);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 15);
+            this.label4.Size = new System.Drawing.Size(77, 12);
             this.label4.TabIndex = 9;
             this.label4.Text = "focusOffset:";
             // 
             // txtCADfocusOffset
             // 
-            this.txtCADfocusOffset.Location = new System.Drawing.Point(329, 24);
-            this.txtCADfocusOffset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCADfocusOffset.Location = new System.Drawing.Point(247, 27);
+            this.txtCADfocusOffset.Margin = new System.Windows.Forms.Padding(2);
             this.txtCADfocusOffset.Name = "txtCADfocusOffset";
-            this.txtCADfocusOffset.Size = new System.Drawing.Size(89, 25);
+            this.txtCADfocusOffset.Size = new System.Drawing.Size(68, 21);
             this.txtCADfocusOffset.TabIndex = 8;
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(171, 172);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnApply.Location = new System.Drawing.Point(134, 173);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(95, 40);
+            this.btnApply.Size = new System.Drawing.Size(71, 32);
             this.btnApply.TabIndex = 10;
             this.btnApply.Text = "参数应用";
             this.btnApply.UseVisualStyleBackColor = true;
@@ -207,26 +218,30 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtCADBeamVal);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(56, 118);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(46, 83);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(440, 220);
+            this.groupBox1.Size = new System.Drawing.Size(330, 223);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CAD参数设置";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtMaxY);
+            this.groupBox2.Controls.Add(this.txtMinY);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtMaxX);
+            this.groupBox2.Controls.Add(this.txtMinX);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtoffset);
             this.groupBox2.Controls.Add(this.txtKp);
-            this.groupBox2.Location = new System.Drawing.Point(10, 102);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(12, 87);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(404, 62);
+            this.groupBox2.Size = new System.Drawing.Size(303, 73);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "cad文件bit转化";
@@ -234,55 +249,58 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(221, 31);
+            this.label6.Location = new System.Drawing.Point(152, 24);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 15);
+            this.label6.Size = new System.Drawing.Size(47, 12);
             this.label6.TabIndex = 16;
             this.label6.Text = "offset:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 31);
+            this.label7.Location = new System.Drawing.Point(9, 22);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 15);
+            this.label7.Size = new System.Drawing.Size(23, 12);
             this.label7.TabIndex = 14;
             this.label7.Text = "Kp:";
             // 
             // txtoffset
             // 
-            this.txtoffset.Location = new System.Drawing.Point(290, 28);
-            this.txtoffset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtoffset.Location = new System.Drawing.Point(213, 18);
+            this.txtoffset.Margin = new System.Windows.Forms.Padding(2);
             this.txtoffset.Name = "txtoffset";
-            this.txtoffset.Size = new System.Drawing.Size(89, 25);
+            this.txtoffset.Size = new System.Drawing.Size(68, 21);
             this.txtoffset.TabIndex = 15;
             this.txtoffset.Text = "1";
             // 
             // txtKp
             // 
-            this.txtKp.Location = new System.Drawing.Point(49, 28);
-            this.txtKp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtKp.Location = new System.Drawing.Point(53, 19);
+            this.txtKp.Margin = new System.Windows.Forms.Padding(2);
             this.txtKp.Name = "txtKp";
-            this.txtKp.Size = new System.Drawing.Size(104, 25);
+            this.txtKp.Size = new System.Drawing.Size(79, 21);
             this.txtKp.TabIndex = 13;
             // 
             // txtScanTime
             // 
-            this.txtScanTime.Location = new System.Drawing.Point(329, 59);
-            this.txtScanTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtScanTime.Location = new System.Drawing.Point(247, 55);
+            this.txtScanTime.Margin = new System.Windows.Forms.Padding(2);
             this.txtScanTime.Name = "txtScanTime";
-            this.txtScanTime.Size = new System.Drawing.Size(89, 25);
+            this.txtScanTime.Size = new System.Drawing.Size(68, 21);
             this.txtScanTime.TabIndex = 11;
             this.txtScanTime.Text = "1";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(253, 62);
+            this.label5.Location = new System.Drawing.Point(190, 58);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 15);
+            this.label5.Size = new System.Drawing.Size(35, 12);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Count:";
+            this.label5.Text = "Count";
             // 
             // listBoxCadInfo
             // 
@@ -290,11 +308,9 @@
             this.事件});
             this.listBoxCadInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBoxCadInfo.GridLines = true;
-            this.listBoxCadInfo.HideSelection = false;
-            this.listBoxCadInfo.Location = new System.Drawing.Point(0, 346);
-            this.listBoxCadInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxCadInfo.Location = new System.Drawing.Point(0, 312);
             this.listBoxCadInfo.Name = "listBoxCadInfo";
-            this.listBoxCadInfo.Size = new System.Drawing.Size(600, 129);
+            this.listBoxCadInfo.Size = new System.Drawing.Size(450, 104);
             this.listBoxCadInfo.TabIndex = 12;
             this.listBoxCadInfo.UseCompatibleStateImageBehavior = false;
             this.listBoxCadInfo.View = System.Windows.Forms.View.Details;
@@ -307,15 +323,92 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(84, 32);
+            this.label8.Location = new System.Drawing.Point(63, 26);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 15);
+            this.label8.Size = new System.Drawing.Size(59, 12);
             this.label8.TabIndex = 13;
             this.label8.Text = "文件名称:";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(158, 49);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "maxPt:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 47);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 12);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "minPt:";
+            // 
+            // txtMaxX
+            // 
+            this.txtMaxX.Location = new System.Drawing.Point(209, 44);
+            this.txtMaxX.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaxX.Name = "txtMaxX";
+            this.txtMaxX.Size = new System.Drawing.Size(35, 21);
+            this.txtMaxX.TabIndex = 19;
+            this.txtMaxX.Text = "200";
+            // 
+            // txtMinX
+            // 
+            this.txtMinX.Location = new System.Drawing.Point(52, 44);
+            this.txtMinX.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMinX.Name = "txtMinX";
+            this.txtMinX.Size = new System.Drawing.Size(41, 21);
+            this.txtMinX.TabIndex = 17;
+            this.txtMinX.Text = "0";
+            // 
+            // txtMinY
+            // 
+            this.txtMinY.Location = new System.Drawing.Point(106, 44);
+            this.txtMinY.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMinY.Name = "txtMinY";
+            this.txtMinY.Size = new System.Drawing.Size(41, 21);
+            this.txtMinY.TabIndex = 21;
+            this.txtMinY.Text = "0";
+            // 
+            // txtMaxY
+            // 
+            this.txtMaxY.Location = new System.Drawing.Point(254, 44);
+            this.txtMaxY.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaxY.Name = "txtMaxY";
+            this.txtMaxY.Size = new System.Drawing.Size(35, 21);
+            this.txtMaxY.TabIndex = 22;
+            this.txtMaxY.Text = "200";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(95, 47);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(11, 12);
+            this.label11.TabIndex = 23;
+            this.label11.Text = ",";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(245, 49);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(11, 12);
+            this.label12.TabIndex = 24;
+            this.label12.Text = ",";
+            // 
             // CADScan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Controls.Add(this.label8);
@@ -325,9 +418,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CADScan";
-            this.Size = new System.Drawing.Size(600, 475);
+            this.Size = new System.Drawing.Size(450, 416);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -362,5 +455,13 @@
         private System.Windows.Forms.ListView listBoxCadInfo;
         private System.Windows.Forms.ColumnHeader 事件;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtMaxX;
+        private System.Windows.Forms.TextBox txtMinX;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtMaxY;
+        private System.Windows.Forms.TextBox txtMinY;
     }
 }

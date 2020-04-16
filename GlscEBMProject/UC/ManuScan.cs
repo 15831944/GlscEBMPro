@@ -19,17 +19,16 @@ namespace GlscEBMProject.UC
     public partial class ManuScan : UserControl,IBeamScanController
     {
         private beamScan _beamScan;
-        bool isAstXAdd = false;
-        bool isAstXMinus = false;
-        bool isAstYAdd = false;
-        bool isAstYMinus = false;
-        bool isFocusAdd = false;
-        bool isFocusMinus = false;
-
-        bool isXAdd = false;
-        bool isXMinus = false;
-        bool isYAdd = false;
-        bool isYMinus = false;
+        private bool isAstXAdd;
+        private bool isAstXMinus;
+        private bool isAstYAdd;
+        private bool isAstYMinus;
+        private bool isFocusAdd;
+        private bool isFocusMinus;
+        private bool isXAdd;
+        private bool isXMinus;
+        private bool isYMinus;
+        private bool isYAdd;
         private bool _isDirecStop=false;
         private int flag;
         List<ushort> pointList = new List<ushort>();
@@ -43,24 +42,42 @@ namespace GlscEBMProject.UC
             InitializeComponent();
             _beamScan = new beamScan();
             ReadParameters();
+           // GlobleParameter._eBMBeamScan.DummySweep(800000);
         }
 
  
         public void BeamStart()
         {
             bool bUseCalibrated = this.chbCal.Checked;
-            GlobleParameter._eBMBeamScan.RunSingleOut(bUseCalibrated,_beamScan,ushort.Parse(txtFocusAdd.Text));
-        }
-
-        private void btnApply_Click(object sender, EventArgs e)
-        {
             this._beamScan.X = ushort.Parse(this.txtX.Text);
             this._beamScan.Y = ushort.Parse(this.txtY.Text);
             this._beamScan.Focus = ushort.Parse(this.txtFo.Text);
             this._beamScan.Astig1 = ushort.Parse(this.txtast_X.Text);
             this._beamScan.Astig2 = ushort.Parse(this.txtast_Y.Text);
             this._beamScan.BeamCurrent = ushort.Parse(this.txtBeamValue.Text);
+            ReadParameters();
+            GlobleParameter._eBMBeamScan.RunSingleOut(bUseCalibrated,_beamScan,ushort.Parse(txtFocusAdd.Text));
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            try
+            {
+             this._beamScan.X = ushort.Parse(this.txtX.Text);
+            this._beamScan.Y = ushort.Parse(this.txtY.Text);
+            this._beamScan.Focus = ushort.Parse(this.txtFo.Text);
+            this._beamScan.Astig1 = ushort.Parse(this.txtast_X.Text);
+            this._beamScan.Astig2 = ushort.Parse(this.txtast_Y.Text);
+            this._beamScan.BeamCurrent = ushort.Parse(this.txtBeamValue.Text);
             WriteSingle();
+            MessageBox.Show("参数应用成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+             }
+            catch (Exception)
+            {
+
+                throw new Exception("参数应用发生错误，请检查参数格式");
+            }
         }
         void WriteSingle()
         {
@@ -366,14 +383,6 @@ namespace GlscEBMProject.UC
                 txtast_X.Text = file.IniReadvalue("Powder", "ASTX");
                 txtast_Y.Text = file.IniReadvalue("Powder", "ASTY");
                 txtFo.Text = file.IniReadvalue("Powder", "FO");
-                txtBeamValue.Text = file.IniReadvalue("Powder", "BeamVal");
-                this._beamScan.Astig1 = ushort.Parse(txtast_X.Text);
-                this._beamScan.Astig2 = ushort.Parse(txtast_Y.Text);
-                this._beamScan.BeamCurrent = ushort.Parse(txtBeamValue.Text);
-                this._beamScan.Focus = ushort.Parse(txtF0.Text);
-                this._beamScan.X = ushort.Parse(txtX.Text);
-                this._beamScan.Y = ushort.Parse(txtY.Text);
-
             }
             catch (Exception ex)
             {
@@ -755,7 +764,7 @@ namespace GlscEBMProject.UC
             }
         }
 
-        private void chbCal_CheckedChanged(object sender, EventArgs e)
+        private void ChbCal_CheckedChanged(object sender, EventArgs e)
         {
             if (chbCal.Checked && _beamScan != null)
             {
@@ -767,9 +776,10 @@ namespace GlscEBMProject.UC
             }
         }
 
-        private void chbKey_CheckedChanged(object sender, EventArgs e)
+        private void ChbKey_CheckedChanged(object sender, EventArgs e)
         {
             txtastX.ReadOnly = txtastY.ReadOnly = txtFocus.ReadOnly = (sender as CheckBox).Checked;
+
         }
     }
 

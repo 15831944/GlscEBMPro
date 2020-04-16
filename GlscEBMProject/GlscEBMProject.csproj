@@ -38,6 +38,9 @@
   <PropertyGroup>
     <StartupObject>GlscEBMProject.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>scan.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BeamScanDll">
       <HintPath>..\BeamScanDll\bin\Debug\BeamScanDll.dll</HintPath>
@@ -145,6 +148,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\Dashboards\FullExtent_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scan.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

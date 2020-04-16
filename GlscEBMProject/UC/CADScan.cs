@@ -56,7 +56,15 @@ namespace GlscEBMProject.UC
                 txtKp.Text = iniFiles.IniReadvalue("CADpara", "kp");
                 txtoffset.Text = iniFiles.IniReadvalue("CADpara", "offset");
                 Parameter.dataAdapter.Kp = double.Parse(txtKp.Text);
+                txtMinX.Text = iniFiles.IniReadvalue("CADpara", "minx");
+                txtMinY.Text = iniFiles.IniReadvalue("CADpara", "miny");
+                txtMaxX.Text = iniFiles.IniReadvalue("CADpara", "maxx");
+                txtMaxY.Text = iniFiles.IniReadvalue("CADpara", "maxy");
                 Parameter.dataAdapter.Offset = double.Parse(txtoffset.Text);
+                Parameter.MinCADFileSetValue.X = double.Parse(txtMinX.Text);
+                Parameter.MinCADFileSetValue.Y = double.Parse(txtMinY.Text);
+                Parameter.MaxCADFileSetValue.X = double.Parse(txtMaxX.Text);
+                Parameter.MaxCADFileSetValue.Y = double.Parse(txtMaxY.Text);
             }
             catch (Exception ex)
             {
@@ -125,7 +133,15 @@ namespace GlscEBMProject.UC
                 Parameter.cadFilescanPara.Speed = double.Parse(txtCADspeed.Text);
                 Parameter.dataAdapter.Kp = double.Parse(txtKp.Text);
                 Parameter.dataAdapter.Offset = double.Parse(txtoffset.Text);
+                double minx = double.Parse(txtMinX.Text);
+                double miny = double.Parse(txtMinY.Text);
+                double maxx = double.Parse(txtMaxX.Text);
+                double maxy = double.Parse(txtMaxY.Text);
+                Parameter.MinCADFileSetValue = new BeamScanDll.Point(minx, miny);
+                Parameter.MaxCADFileSetValue = new BeamScanDll.Point(maxx, maxy);
                 WritePara();
+                MessageBox.Show("参数设置成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
             }
             catch (Exception ex)
             {
@@ -144,6 +160,10 @@ namespace GlscEBMProject.UC
                 file.IniWritevalue("CADpara", "CADBeamVal", txtCADBeamVal.Text.Trim());
                 file.IniWritevalue("CADpara", "kp", txtKp.Text.Trim());
                 file.IniWritevalue("CADpara", "offset", txtoffset.Text.Trim());
+                file.IniWritevalue("CADpara", "minx", txtMinX.Text.Trim());
+                file.IniWritevalue("CADpara", "miny", txtMinY.Text.Trim());
+                file.IniWritevalue("CADpara", "maxx", txtMaxX.Text.Trim());
+                file.IniWritevalue("CADpara", "maxy", txtMaxY.Text.Trim());
             }
         
         }

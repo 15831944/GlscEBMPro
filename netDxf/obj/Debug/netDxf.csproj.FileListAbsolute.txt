@@ -7,7 +7,7 @@ C:\Users\Lamber\Desktop\GlscEBMProject\netDxf\obj\Debug\netDxf.pdb
 F:\GlscEBMProject\netDxf\bin\Debug\netDxf.xml
 F:\GlscEBMProject\netDxf\bin\Debug\netDxf.dll
 F:\GlscEBMProject\netDxf\bin\Debug\netDxf.pdb
-F:\GlscEBMProject\netDxf\obj\Debug\netDxf.csprojAssemblyReference.cache
 F:\GlscEBMProject\netDxf\obj\Debug\netDxf.csproj.CoreCompileInputs.cache
 F:\GlscEBMProject\netDxf\obj\Debug\netDxf.dll
 F:\GlscEBMProject\netDxf\obj\Debug\netDxf.pdb
+F:\GlscEBMProject\netDxf\obj\Debug\netDxf.csprojAssemblyReference.cache
